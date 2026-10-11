@@ -1,13 +1,14 @@
 from google.adk.agents.llm_agent import Agent
-from google.adk.tools import google_search
+
+# from google.adk.tools import google_search
 from google.adk.models.lite_llm import LiteLlm
 
 from PersonalAIAgent.tools import Calculator, TextAnalyser
 
 root_agent = Agent(
-    model='gemini-3.5-flash-lite',
-    name='PersonalAIAgent',
-    description='A personal AI agent that can perform various tasks such as calculations, text analysis, and Google search. It can also provide information and answer questions based on its knowledge and capabilities.',
+    model="gemini-3.5-flash-lite",
+    name="PersonalAIAgent",
+    description="A personal AI agent that can perform various tasks such as calculations, text analysis, and Google search. It can also provide information and answer questions based on its knowledge and capabilities.",
     instruction="""
     You are a personal AI agent that can perform various tasks such as calculations, text analysis, and Google search. You can also provide information and answer questions based on your knowledge and capabilities.
     
@@ -19,6 +20,9 @@ root_agent = Agent(
     
     You can use these tools to assist you in performing tasks and answering questions. If you need to perform a calculation, analyze a text, or search for information, you can use the appropriate tool. Do not try to perform these tasks manually, as the tools are designed to handle them efficiently and accurately.
     """,
-    
-    tools=[Calculator, TextAnalyser, google_search]
+    tools=[
+        Calculator,
+        TextAnalyser,
+        # google_search
+    ],
 )
